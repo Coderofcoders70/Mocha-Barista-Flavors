@@ -11,7 +11,9 @@
 <body class="bg-amber-950">
     <!-- nav-section -->
     <nav class="bg-[#FFBF78] h-20 flex justify-around items-center p-3">
-        <div class="text-4xl md:text-3xl cursor-pointer text-[#cd7324]" style="font-family: 'Dancing Script', cursive">Mocha-Barista</div>
+        <div class="text-3xl md:text-3xl cursor-pointer text-[#cd7324]" style="font-family: 'Dancing Script', cursive">Mocha-Barista</div>
+
+        <!-- desktop-menu -->
         <div class="hidden md:block">
             <ul class="flex space-x-5 cursor-pointer text-[#cd7324]">
                 <li class="flex items-center gap-1 text-[#cd7324] hover:text-amber-900">
@@ -61,19 +63,28 @@
             </ul>
         </div>
 
-        <div class="md:block hidden">
+        <!-- icons -->
+        <div class="md:block w-22 md:w-23">
             <div class="flex items-center gap-4 cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
-                <path d="M17 17L21 21" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+                <div class="relative">
+                    <svg id="search-bar" class="hover:w-4 hover:border-1 border-amber-900 rounded-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="24" color="#000000"
+                    fill="none">
+                     <path d="M17 17L21 21" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                     <path d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z"     stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                    <div id="backdrop" class="fixed inset-0 bg-amber-900 bg-opacity-50 hidden transition-opacity duration-300 ease-in-out"></div>
+
+                    <div id="search-popup" class="fixed top-1/4 left-1/2 -translate-x-1/2 w-0 opacity-0 transition-all duration-500 ease-in-out
+                    flex justify-center">
+                        <input id="search-input" type="text" placeholder="Search..." class="w-80 max-w-sm p-3 rounded-xl shadow-xl border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-950" />
+                    </div>
+                </div>
+                <svg class="hover:w-4 hover:border-1 border-amber-900 rounded-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
                 <path d="M17 8.5C17 5.73858 14.7614 3.5 12 3.5C9.23858 3.5 7 5.73858 7 8.5C7 11.2614 9.23858 13.5 12 13.5C14.7614 13.5 17 11.2614 17 8.5Z" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M19 20.5C19 16.634 15.866 13.5 12 13.5C8.13401 13.5 5 16.634 5 20.5" stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                <svg class="hover:w-4 hover:border-1 border-amber-900 rounded-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
                 <path d="M8 7H16C17.8856 7 18.8284 7 19.4142 7.58579C20 8.17157 20 9.11438 20 11V15C20 18.2998 20 19.9497 18.9749 20.9749C17.9497 22 16.2998 22 13 22H11C7.70017 22 6.05025 22 5.02513 20.9749C4 19.9497 4 18.2998 4 15V11C4 9.11438 4 8.17157 4.58579 7.58579C5.17157 7 6.11438 7 8 7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 <path d="M16 9.5C16 5.63401 14.2091 2 12 2C9.79086 2 8 5.63401 8 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
@@ -81,15 +92,15 @@
         </div>
 
         <!-- Hamburger-menu -->
-        <div class="md:hidden block hover:border-2 border-white">
+        <div class="md:hidden block w-10 hover:border-2 border-white">
             <button id="menu-btn" class="text-5xl text-[#cd7324] cursor-pointer">&#8801</button>
         </div>
 
         <!-- mobile-menu -->
-         <div id="mobile-menu" class="md:hidden hidden absolute w-full top-20 left-0 px-4 mt-2">
+         <div id="mobile-menu" class="md:hidden absolute w-full bg-[#FFBF78] max-h-0 opacity-0 overflow-hidden pointer-events-none transition-all duration-500 ease-in-out top-20 left-0 px-4">
             <ul class="font-medium flex-col flex gap-3 cursor-pointer text-[#cd7324]">
                 <li class="flex items-center gap-1 text-[#cd7324]">
-                    <a class="hover:text-[#FFBF78]" href="#">Home</a>
+                    <a class="hover:text-[#4F200D]" href="#">Home</a>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="#cd7324">
                             <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#141B34" stroke-width="1.5"stroke-linecap="round" stroke-linejoin="round" />
@@ -98,7 +109,7 @@
                 </li>
 
                 <li class="flex items-center gap-1 text-[#cd7324]">
-                    <a class="hover:text-[#FFBF78]" href="#">About</a>
+                    <a class="hover:text-[#4F200D]" href="#">About</a>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="#cd7324">
                             <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#141B34" stroke-width="1.5"stroke-linecap="round" stroke-linejoin="round" />
@@ -107,7 +118,7 @@
                 </li>
 
                 <li class="flex items-center gap-1 text-[#cd7324]">
-                    <a class="hover:text-[#FFBF78]" href="#">Articles</a>
+                    <a class="hover:text-[#4F200D]" href="#">Articles</a>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="#cd7324">
                             <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#141B34" stroke-width="1.5"stroke-linecap="round" stroke-linejoin="round" />
@@ -116,7 +127,7 @@
                 </li>
 
                 <li class="flex items-center gap-1 text-[#cd7324]">
-                    <a class="hover:text-[#FFBF78]" href="#">Recipes </a>
+                    <a class="hover:text-[#4F200D]" href="#">Recipes </a>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="#cd7324">
                             <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#141B34" stroke-width="1.5"stroke-linecap="round" stroke-linejoin="round" />
@@ -125,7 +136,7 @@
                 </li>
                 
                 <li class="flex items-center gap-1 text-[#cd7324]">
-                    <a class="hover:text-[#FFBF78]" href="#">Contact Us</a>
+                    <a class="hover:text-[#4F200D]" href="#">Contact Us</a>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="#cd7324">
                          <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#141B34" stroke-width="1.5"stroke-linecap="round" stroke-linejoin="round" />
