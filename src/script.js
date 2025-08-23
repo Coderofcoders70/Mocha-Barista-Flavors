@@ -32,3 +32,9 @@ backdrop.addEventListener("click", () => {
     searchPopup.classList.add("w-0", "opacity-0");
     searchPopup.classList.remove("w-full", "opacity-100");
 });
+
+document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+        backdrop.click();
+    }
+});
