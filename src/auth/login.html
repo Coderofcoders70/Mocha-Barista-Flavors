@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="icon" type="image/x-icon" href="https://png.pngtree.com/png-vector/20230808/ourmid/pngtree-cute-coffee-cup-clipart-cute-cartoon-cute-coffee-cup-vector-png-image_6866152.png">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-[#FFBF78] flex items-center justify-center h-screen">
+    <div class="md:max-w-[960px] bg-amber-900 grid grid-cols-2 items-center space-x-10 p-5 rounded-2xl w-90 sm:w-full">
+        <div class="relative hidden sm:block">
+            <img src="/src/auth/signup-background.svg" alt="">
+            <img src="/src/auth/teamwork.svg" alt="" class="absolute top-36">
+        </div>
+
+        <div class="md:max-w-80 md:grid md:gap-5 max-w-full mx-auto p-5 flex flex-col flex-wrap gap-5">
+            <h1 class="text-5xl font-medium text-amber-50" style="font-family: 'Dancing Script', cursive">Sign-In</h1>
+            <form id="login-form" class="space-y-6 text-amber-100">
+                <div class="relative">
+                    <div class="absolute top-1 left-1 bg-[#FFFFFF30] rounded-full p-2 flex items-center justify-center text-amber-900">
+                        <i class="fa-solid fa-envelope-open"></i>
+                    </div>
+                    <input type="email" placeholder="Enter e-mail" id="email" class="w-70 md:w-80 bg-[#FFFFFF30] py-2 px-12 rounded-full focus:bg-[#00000050] focus:outline-none focus:ring-1 focus:ring-offset-amber-900 focus:drop-shadow-amber-900">
+                </div>
+
+                <div class="relative">
+                    <div class="absolute top-1 left-1 bg-[#FFFFFF30] rounded-full p-2 flex items-center justify-center text-amber-900">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <input type="password" placeholder="Enter Password" id="password" class="w-70 md:w-80 bg-[#FFFFFF30] py-2 px-12 rounded-full focus:bg-[#00000050] focus:outline-none focus:ring-1 focus:ring-offset-amber-900 focus:drop-shadow-amber-900">
+                </div>
+                <button class="bg-gradient-to-r from-orange-800 to-amber-700 w-40 py-2 rounded-full font-semibold text-center">Login</button> 
+            </form>
+            <div class="text-white border-t border-white pt-4 space-y-2 text-sm">
+                <p>Don't have an account ?<a href="signup.html" class="text-[#FFBF78] font-sans"> Sign-Up</a></p>
+                <p>Forgot Password ? <a href="forgotpass.html" class="text-[#FFBF78] font-sans"> Reset Password</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js"></script>
+<script src="/src/assets/firebase-init.js"></script>
+
+<script src="/src/auth/js/login.js"></script>
+</html>
