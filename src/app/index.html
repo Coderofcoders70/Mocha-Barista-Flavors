@@ -11,7 +11,7 @@
 <body class="bg-amber-950">
     <!-- nav-section -->
     <nav class="bg-[#FFBF78] h-20 flex justify-around items-center p-3">
-        <div class="text-3xl md:text-3xl cursor-pointer text-[#cd7324]" style="font-family: 'Dancing Script', cursive">Mocha-Barista</div>
+        <div class="text-3xl md:text-3xl cursor-pointer text-[#cd7324]" style="font-family: 'Dancing Script', cursive">Mocha Barista</div>
 
         <!-- desktop-menu -->
         <div class="hidden md:block">
@@ -63,10 +63,8 @@
             </ul>
         </div>
 
-        <!-- greetUser -->
-
         <!-- icons -->
-        <div class="md:block w-22 md:w-23">
+        <div class="md:block w-22 md:w-23 p-4">
             <div class="flex items-center gap-4 cursor-pointer">
                 <div class="relative">
                     <svg id="search-bar" class="hover:w-4 hover:border-1 border-amber-900 rounded-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="24" color="#000000"
@@ -103,15 +101,24 @@
             </div>
         </div>
 
+        <!-- greetUser -->
+        <div class="flex flex-col cursor-pointer text-amber-800 ml-[20px] p-9 md:p-10">
+            <p class="text-base font-extrabold" id="greetUser"></p>
+        </div>
+
         <!-- Hamburger-menu -->
         <div class="md:hidden block w-10 hover:border-2 border-white">
             <button id="menu-btn" class="text-5xl text-[#cd7324] cursor-pointer">&#8801</button>
         </div>
 
+        <!-- log-out button -->
+        <div class="hidden md:block">
+            <button type="button" id="logoutNav" class="cursor-pointer mt-1 mb-2 bg-amber-900 text-white px-4 py-2 rounded">Logout</button>
+        </div>
+
         <!-- mobile-menu -->
          <div id="mobile-menu" class="md:hidden absolute w-full bg-[#FFBF78] max-h-0 opacity-0 overflow-hidden pointer-events-none transition-all duration-500 ease-in-out top-20 left-0 px-4">
             <ul class="font-medium flex-col flex gap-3 cursor-pointer text-[#cd7324]">
-                <p id="greetUser"></p>
                 <li class="flex items-center gap-1 text-[#cd7324]">
                     <a class="hover:text-[#4F200D]" href="#">Home</a>
                     <span>
@@ -156,7 +163,7 @@
                         </svg>
                     </span>
                 </li>
-                <button type="button" id="logout" class="mt-1 mb-2 bg-amber-900 text-white px-4 py-2 rounded">Logout</button>
+                <button type="button" id="logout" class="cursor-pointer mt-1 mb-2 bg-amber-900 text-white px-4 py-2 rounded">Logout</button>
             </ul>
          </div>
     </nav>
@@ -167,6 +174,7 @@
     let userInfo = JSON.parse(sessionStorage.getItem("user-info"));
 
     let greetMsg = document.getElementById('greetUser');
+    let logoutNavBtn = document.getElementById('logoutNav');
     let logoutBtn = document.getElementById('logout');
 
     let logOutUser = () => {
@@ -180,11 +188,12 @@
             window.location.href = "/src/auth/login.html";
         }
         else{
-            greetMsg.innerText = `Welcome ${userInfo.Username}`;
+            greetMsg.innerText = `Welcome, ${userInfo.Username}`;
         }
     }
 
     window.addEventListener("load", checkCreds);
+    logoutNavBtn.addEventListener("click", logOutUser);
     logoutBtn.addEventListener("click", logOutUser);
 </script>
 

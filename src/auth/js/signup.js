@@ -27,7 +27,7 @@ let registerUser = (e) => {
       .then(async (credentials) => {
             let ref = doc(db, "UserAuthList", credentials.user.uid);
             await setDoc(ref, {
-                  Username: name.value,
+                  Username: name.value.trim(),
                   Email: email.value,
                   createdAt: new Date(),
             });
