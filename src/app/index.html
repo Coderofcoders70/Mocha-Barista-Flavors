@@ -63,6 +63,8 @@
             </ul>
         </div>
 
+        <!-- greetUser -->
+
         <!-- icons -->
         <div class="md:block w-22 md:w-23">
             <div class="flex items-center gap-4 cursor-pointer">
@@ -109,7 +111,7 @@
         <!-- mobile-menu -->
          <div id="mobile-menu" class="md:hidden absolute w-full bg-[#FFBF78] max-h-0 opacity-0 overflow-hidden pointer-events-none transition-all duration-500 ease-in-out top-20 left-0 px-4">
             <ul class="font-medium flex-col flex gap-3 cursor-pointer text-[#cd7324]">
-                <p id="welcome-user"></p>
+                <p id="greetUser"></p>
                 <li class="flex items-center gap-1 text-[#cd7324]">
                     <a class="hover:text-[#4F200D]" href="#">Home</a>
                     <span>
@@ -154,15 +156,37 @@
                         </svg>
                     </span>
                 </li>
-                <button id="logout" class="mt-1 mb-2 bg-amber-900 text-white px-4 py-2 rounded">Logout</button>
+                <button type="button" id="logout" class="mt-1 mb-2 bg-amber-900 text-white px-4 py-2 rounded">Logout</button>
             </ul>
          </div>
     </nav>
 </body>
-<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js"></script>
-<script src="/src/assets/firebase-init.js"></script>
 
-<script src="script.js"></script>
+<script>
+    let userCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+    let userInfo = JSON.parse(sessionStorage.getItem("user-info"));
+
+    let greetMsg = document.getElementById('greetUser');
+    let logoutBtn = document.getElementById('logout');
+
+    let logOutUser = () => {
+        sessionStorage.removeItem("user-creds");
+        sessionStorage.removeItem("user-info");
+        window.location.href = "/src/auth/login.html";
+    }
+
+    let checkCreds = () => {
+        if (!sessionStorage.getItem("user-creds")) {
+            window.location.href = "/src/auth/login.html";
+        }
+        else{
+            greetMsg.innerText = `Welcome ${userInfo.Username}`;
+        }
+    }
+
+    window.addEventListener("load", checkCreds);
+    logoutBtn.addEventListener("click", logOutUser);
+</script>
+
+<script src="/src/app/script.js"></script>
 </html>

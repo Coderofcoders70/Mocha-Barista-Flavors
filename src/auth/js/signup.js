@@ -1,27 +1,43 @@
-const signUpForm = document.getElementById('signup-form');
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
-signUpForm.addEventListener("submit", async(e) => {
-    e.preventDefault();
+const firebaseConfig = {
+  apiKey: "AIzaSyAk8Nil5-EprxtMF8mJtHe32jv4uXGXvFo",
+  authDomain: "mocha-barista.firebaseapp.com",
+  projectId: "mocha-barista",
+  storageBucket: "mocha-barista.firebasestorage.app",
+  messagingSenderId: "386743139725",
+  appId: "1:386743139725:web:d5f43124cc9534efc611c4"
+};
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value;
+const app = initializeApp(firebaseConfig);
+const db = getFirestore();
+const auth = getAuth(app);
 
-    try{
-        const userCredential = await firebase.createUserWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
+let mainForm = document.getElementById('signup-form');
+let name = document.getElementById('name');
+let email = document.getElementById('email');
+let password = document.getElementById('password');
 
-        await firebase.setDoc(firebase.doc(db, "users", user.uid), {
-            name,
-            email,
-            createdAt: new Date()
-        });
-    
-        alert("Sign Up Successfully!!");
-        window.location.href = "/src/app/index.html";
-    }
+let registerUser = (e) => {
+      e.preventDefault();
 
-    catch(err){
-        alert(err.message);
-    }
-});
+      createUserWithEmailAndPassword(auth, email.value, password.value)
+      .then(async (credentials) => {
+            let ref = doc(db, "UserAuthList", credentials.user.uid);
+            await setDoc(ref, {
+                  Username: name.value,
+                  Email: email.value,
+                  createdAt: new Date(),
+            });
+
+            alert("SignUp Successfully!!");
+            window.location.href = "/src/auth/login.html";
+      })
+      .catch((error) => {
+            alert(error.message);
+      })
+}
+
+mainForm.addEventListener("submit", registerUser);

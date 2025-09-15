@@ -38,22 +38,3 @@ document.addEventListener("keydown", (e) => {
         backdrop.click();
     }
 });
-
-firebase.onAuthStateChanged(auth, async (user) => {
-    if(user){
-        const docRef = firebase.doc(db, "users", user.id);
-        const docSnap = await firebase.getDoc(docRef);
-
-        if (docSnap.exists()) {
-            document.getElementById('welcome-user').textContent = "Hello, " + docSnap.data().name;
-        }
-    }
-    else
-    {
-        window.location.href = "/src/auth/login.html";        
-    }
-});
-
-document.getElementById('logout').addEventListener("click", () => {
-    firebase.signOut(auth);
-});
