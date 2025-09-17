@@ -101,3 +101,40 @@ const swiper = new Swiper('.swiper', {
   },
 
 });
+
+const scrollUp = () => {
+    const scrollUpBtn = document.getElementById('scroll-up');
+
+    if (this.scrollY >= 250) {
+        scrollUpBtn.classList.remove('-bottom-1/2');
+        scrollUpBtn.classList.add('bottom-4');
+    }
+    else{
+        scrollUpBtn.classList.add('-bottom-1/2');
+        scrollUpBtn.classList.remove('bottom-4');
+    }
+}
+
+window.addEventListener("scroll", scrollUp);
+
+// Scroll Reveal Animation 
+const sr = ScrollReveal({
+    origin: "top",
+    distance: "60px",
+    duration: "1500",
+    delay: "300",
+    reset: true,
+})
+
+sr.reveal(`.hero_top, .ingredients_top, .article_top, .article_btn, .newsletter`);
+sr.reveal(`.hero_image, .promo_image`, {scale: 0.5});
+sr.reveal(`.hero_cartoon_img1, .hero_cartoon_img2`, {scale: 0.5, distance: "0px", delay: 1000});
+sr.reveal(`.hero_smoke_img1, .hero_smoke_img2, .hero_smoke_img3, .hero_smoke_img4`, {origin: "bottom", delay: 1500});
+
+sr.reveal(`.feature_left, .promo_content`, {origin: "left"});
+sr.reveal(`.feature_right`, {origin: "right"});
+
+sr.reveal(`.ingredients_items_left`, {origin: "left", interval: 100});
+sr.reveal(`.ingredients_items_right`, {origin: "right", interval: 100});
+
+sr.reveal(`.article_item`, {interval: 100});
