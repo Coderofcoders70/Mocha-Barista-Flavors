@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Mocha Barista Home</title>
     <!-- style css link -->
     <link rel="stylesheet" href="/src/style.css">
     <!-- Favicon  -->
@@ -42,7 +42,7 @@
                 </li>
 
                 <li class="flex items-center gap-1 text-[#cd7324] hover:text-amber-900">
-                    <a href="#">Articles</a>
+                    <a href="#">Article</a>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="#cd7324">
                             <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#141B34" stroke-width="1.5"stroke-linecap="round" stroke-linejoin="round" />
@@ -60,7 +60,7 @@
                 </li>
                 
                 <li class="flex items-center gap-1 text-[#cd7324] hover:text-amber-900">
-                    <a href="#">Contact Us</a>
+                    <a href="#">Ingredients </a>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="#cd7324">
                          <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#141B34" stroke-width="1.5"stroke-linecap="round" stroke-linejoin="round" />
@@ -153,7 +153,7 @@
                 </li>
 
                 <li class="flex items-center gap-1 text-[#cd7324]">
-                    <a class="hover:text-[#4F200D]" href="#">Articles</a>
+                    <a class="hover:text-[#4F200D]" href="#">Article</a>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="#cd7324">
                             <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#141B34" stroke-width="1.5"stroke-linecap="round" stroke-linejoin="round" />
@@ -171,7 +171,7 @@
                 </li>
                 
                 <li class="flex items-center gap-1 text-[#cd7324]">
-                    <a class="hover:text-[#4F200D]" href="#">Contact Us</a>
+                    <a class="hover:text-[#4F200D]" href="#">Ingredients</a>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="#cd7324">
                          <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#141B34" stroke-width="1.5"stroke-linecap="round" stroke-linejoin="round" />
@@ -305,6 +305,60 @@
         </div>
     </section>
 
+    <!-- Article  -->
+    <section id="article" class="bg-[#EBCB90] py-20">
+        <div class="text-center pb-12">
+            <h4 class="font-serif text-3xl capitalize font-semibold sm:text-4xl text-[#4F200D]">Our Article</h4>
+            <h2 class="font-serif capitalize font-semibold sm:text-4xl text-[#4F200D]">Latest Updates</h2>
+        </div>
+
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 mx-10">
+
+            <div class="relative overflow-hidden">
+                <img class="w-full hover:scale-110 duration-700" src="/src/assets/images/article-coffee-cup1.jpg" alt="">
+
+                <div>
+                    <div class="flex items-center gap-5 py-5">
+                        <p class="uppercase cursor-pointer hover:text-amber-800">Business Tips</p>
+                        <p class="text-amber-800">-</p>
+                        <p class="cursor-pointer text-amber-800">Sept 18, 2025</p>
+                    </div>
+                    <h3 class="cursor-pointer text-amber-800 font-medium">Trending Coffee flavor for This Year</h3>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden">
+                <img class="w-full hover:scale-110 duration-700" src="/src/assets/images/article-coffee-cup2.jpg" alt="">
+
+                <div>
+                    <div class="flex items-center gap-5 py-5">
+                        <p class="uppercase cursor-pointer hover:text-amber-800">Business Tips</p>
+                        <p class="text-amber-800">-</p>
+                        <p class="cursor-pointer text-amber-800">Sept 18, 2025</p>
+                    </div>
+                    <h3 class="cursor-pointer text-amber-800 font-medium">The Skill of making the best Cappuccino coffee.</h3>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden">
+                <img class="w-full hover:scale-110 duration-700" src="/src/assets/images/article-coffee-cup3.jpg" alt="">
+
+                <div>
+                    <div class="flex items-center gap-5 py-5">
+                        <p class="uppercase cursor-pointer hover:text-amber-800">Business Tips</p>
+                        <p class="text-amber-800">-</p>
+                        <p class="cursor-pointer text-amber-800">Sept 18, 2025</p>
+                    </div>
+                    <h3 class="cursor-pointer text-amber-800 font-medium">Mocha is the most finest coffee flavor.</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center py-7">
+            <button class="py-3 px-10 bg-amber-950 text-white rounded-full cursor-pointer">Read More</button>
+        </div>
+    </section>
+
     <!-- shop  -->
     <section id="shop" class="py-10">
         <h2 class="font-serif text-3xl text-center capitalize font-semibold sm:text-5xl text-[#EBCB90]">Explore our Cafe</h2>
@@ -317,15 +371,15 @@
                     <img class="w-full" src="/src/assets/images/cappuccino-prod1-removebg-preview.png" alt="product1 image">
 
                     <div class="mx-3">
-                        <h3>Cappuccino</h3>
+                        <h3 class="text-[#EBCB90]">Cappuccino</h3>
                             
                         <div>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <span class="text-orange-300">0 review</span>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <span class="text-orange-300">5 review</span>
                         </div>
                         <p class="text-orange-300">Rs. 95</p>
                     </div>
@@ -335,13 +389,13 @@
                     <img class="w-full" src="/src/assets/images/espresso-prod2-cup-removebg-preview.png" alt="product1 image">
 
                     <div class="mx-3">
-                        <h3>Espresso Double Shot</h3>
+                        <h3 class="text-[#EBCB90]">Espresso Double Shot</h3>
                             
                         <div>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
                             <i class="ri-star-fill"></i>
                             <span class="text-orange-300">4 review</span>
                         </div>
@@ -353,14 +407,14 @@
                     <img class="w-full" src="/src/assets/images/black-coffe-prod3-removebg-preview.png" alt="product1 image">
 
                     <div class="mx-3">
-                        <h3>Espresso Original</h3>
+                        <h3 class="text-[#EBCB90]">Espresso Original</h3>
                             
                         <div>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
                             <span class="text-orange-300">5 review</span>
                         </div>
                         <p class="text-orange-300">Rs. 95</p>
@@ -371,13 +425,13 @@
                     <img class="w-full" src="/src/assets/images/latte-cup-prod4-removebg-preview.png" alt="product1 image">
 
                     <div class="mx-3">
-                        <h3>Latte</h3>
+                        <h3 class="text-[#EBCB90]">Latte</h3>
                             
                         <div>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
                             <i class="ri-star-fill"></i>
                             <span class="text-orange-300">4 review</span>
                         </div>
@@ -389,13 +443,13 @@
                     <img class="w-full" src="/src/assets/images/iced-coffee-cup-prod5-removebg-preview.png" alt="product1 image">
 
                     <div class="mx-3">
-                        <h3>Iced Coffee</h3>
+                        <h3 class="text-[#EBCB90]">Iced Coffee</h3>
                             
                         <div>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
                             <i class="ri-star-fill"></i>
                             <span class="text-orange-300">4 review</span>
                         </div>
@@ -407,14 +461,14 @@
                     <img class="w-full" src="/src/assets/images/mocha-cup-prod6-removebg-preview.png" alt="product1 image">
 
                     <div class="mx-3">
-                        <h3>Mocha Special</h3>
+                        <h3 class="text-[#EBCB90]">Mocha Special</h3>
                             
                         <div>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
                             <span class="text-orange-300">5 review</span>
                         </div>
                         <p class="text-orange-300">Rs. 95</p>
@@ -425,13 +479,13 @@
                     <img class="w-full" src="/src/assets/images/pngtree-americano-coffee-beans-cup-prod7-transparent-white-background-png-image_6698453-removebg-preview.png" alt="product1 image">
 
                     <div class="mx-3">
-                        <h3>Americano</h3>
+                        <h3 class="text-[#EBCB90]">Americano</h3>
                             
                         <div>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
+                            <i class="ri-star-fill text-[#EBCB90]"></i>
                             <i class="ri-star-fill"></i>
                             <span class="text-orange-300">4 review</span>
                         </div>
@@ -448,7 +502,124 @@
         </div>
     </section>
 
+    <!-- Seasonal Promo  -->
+    <section class="bg-gradient-to-bl from-amber-200 to-orange-600 pt-12 grid grid-cols-1 sm:grid-cols-3">
+        
+        <div class="relative overflow-hidden">
 
+            <img class="w-full hover:scale-110 duration-700" src="/src/assets/images/festive-coffee-cup-removebg-preview.png" alt="seasonal promo image">
+
+            <div class="absolute top-10 left-1/2 transform -translate-x-1/2 text-center pointer-events-none">
+                <h2 class="lowercase font-bold text-amber-900">Coffee Season</h2>
+                <h2 class="uppercase font-bold text-amber-900">is Back!!</h2>
+            </div>
+        </div>
+
+        <div class="relative overflow-hidden">
+            <img class="w-full hover:scale-110 duration-700" src="/src/assets/images/seasonal-promo2-removebg-preview.png" alt="seasonal promo image2">
+
+            <div class="absolute top-1/2 left-1/4 pointer-events-none">
+                <div class="relative">
+                    <img class="w-24" src="/src/assets/images/scalloped.png" alt="scalloped image">
+                    <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl font-mono text-white">-33%</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative overflow-hidden">
+            <img class="w-full hover:scale-110 duration-700" src="/src/assets/images/coffee-seasonal-splash.png" alt="seasonal promo image3">
+
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center pointer-events-none">
+                <h2 class="uppercase font-bold text-[#4b2f11]">Brew Happiness</h2>
+                <h2 class="lowercase font-serif text-[#a17a4e]">in your Day</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients  -->
+    <section id="ingredients" class="text-white py-20">
+
+        <div class="text-center pb-20">
+            <h4 class="font-serif text-3xl capitalize font-semibold sm:text-4xl text-[#EBCB90]">Popular Flavors</h4>
+            <h2 class="text-white">Seasonal Flavors</h2>
+        </div>
+
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10 lg:px-40">
+
+            <!-- left-side  -->
+            <div class="flex flex-col gap-10 lg:gap-20">
+
+                <div class="flex flex-col items-center gap-3 text-center md:flex-row md:items-start md:text-start md:gap-5 lg:max-w-sm xl:max-w-lg">
+                    <img class="w-40" src="/src/assets/images/french-vanilla-removebg-preview.png" alt="french vanilla image">
+
+                    <div class="space-y-3">
+                        <h3>French Vanilla</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nisi iure necessitatibus aut at nobis nesciunt debitis reiciendis maxime possimus!</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-3 text-center md:flex-row md:items-start md:text-start md:gap-5 lg:max-w-sm xl:max-w-lg">
+                    <img class="w-40" src="/src/assets/images/coffee-beans-hazelnuts-leaves-isolated-600nw-2145494381-removebg-preview.png" alt="french vanilla image">
+
+                    <div class="space-y-3">
+                        <h3>Hazelnut</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nisi iure necessitatibus aut at nobis nesciunt debitis reiciendis maxime possimus!</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-3 text-center md:flex-row md:items-start md:text-start md:gap-5 lg:max-w-sm xl:max-w-lg">
+                    <img class="w-40" src="/src/assets/images/caramel-coffee-flavor-removebg-preview.png" alt="french vanilla image">
+
+                    <div class="space-y-3">
+                        <h3>Caramel</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nisi iure necessitatibus aut at nobis nesciunt debitis reiciendis maxime possimus!</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-3 text-center md:flex-row md:items-start md:text-start md:gap-5 lg:max-w-sm xl:max-w-lg">
+                    <img class="w-40" src="/src/assets/images/chestnuts-flavor-coffee-beans-removebg-preview.png" alt="french vanilla image">
+
+                    <div class="space-y-3">
+                        <h3>Chestnut</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nisi iure necessitatibus aut at nobis nesciunt debitis reiciendis maxime possimus!</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- right-side  -->
+            <div class="flex flex-col gap-10 lg:gap-20">
+
+                <div class="flex flex-col items-center gap-3 text-center md:flex-row md:items-start md:text-start md:gap-5 lg:max-w-sm xl:max-w-lg">
+                    <img class="w-40" src="/src/assets/images/mocha-coffee-beans-removebg-preview.png" alt="french vanilla image">
+
+                    <div class="space-y-3">
+                        <h3>Mocha</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nisi iure necessitatibus aut at nobis nesciunt debitis reiciendis maxime possimus!</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-3 text-center md:flex-row md:items-start md:text-start md:gap-5 lg:max-w-sm xl:max-w-lg">
+                    <img class="w-40" src="/src/assets/images/cinnamon-coffee-flavor-removebg-preview.png" alt="french vanilla image">
+
+                    <div class="space-y-3">
+                        <h3>Cinnamon</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nisi iure necessitatibus aut at nobis nesciunt debitis reiciendis maxime possimus!</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-3 text-center md:flex-row md:items-start md:text-start md:gap-5 lg:max-w-sm xl:max-w-lg">
+                    <img class="w-40" src="/src/assets/images/fresh-peppermint-coffee-beans-white-removebg-preview.png" alt="french vanilla image">
+
+                    <div class="space-y-3">
+                        <h3>Peppermint</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nisi iure necessitatibus aut at nobis nesciunt debitis reiciendis maxime possimus!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <!-- Swiper Js Script  -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
