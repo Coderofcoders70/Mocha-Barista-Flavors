@@ -38,3 +38,66 @@ document.addEventListener("keydown", (e) => {
         backdrop.click();
     }
 });
+
+const searchMobileIcon = document.getElementById('search-mobile-bar');
+const searchMobileInput = document.getElementById('search-mobile-input');
+const searchMobilePopup = document.getElementById('search-mobile-popup');
+const backdropMobile = document.getElementById('backdrop-mobile');
+
+searchMobileIcon.addEventListener("click", () => {
+    backdropMobile.classList.remove("hidden");
+    backdropMobile.classList.add("opacity-100");
+    searchMobilePopup.classList.remove("w-0", "opacity-0");
+    searchMobilePopup.classList.add("w-full", "opacity-100");
+
+    setTimeout(() => searchInput.focus(), 300);
+});
+
+backdropMobile.addEventListener("click", () => {
+    backdropMobile.classList.add("hidden");
+    backdropMobile.classList.remove("opacity-100");
+    searchMobilePopup.classList.add("w-0", "opacity-0");
+    searchMobilePopup.classList.remove("w-full", "opacity-100");
+});
+
+document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+        backdropMobile.click();
+    }
+});
+
+// Swiper JS
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
+  },
+
+  grabCursor: true,
+  slidesPerView: 1,
+  spaceBetween: 10,
+  breakpoints: {
+    640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+    },
+    760: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+    },
+    1024: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+    },
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+});
