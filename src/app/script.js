@@ -126,10 +126,14 @@ const sr = ScrollReveal({
     reset: true,
 })
 
-sr.reveal(`.hero_top, .ingredients_top, .article_top, .article_btn, .newsletter`);
+sr.reveal(`.hero_top, .ingredients_top, .article_top, .article_btn, .newsletter, .footer_icon, .footer_content, .footer_copyright`);
 sr.reveal(`.hero_image, .promo_image`, {scale: 0.5});
 sr.reveal(`.hero_cartoon_img1, .hero_cartoon_img2`, {scale: 0.5, distance: "0px", delay: 1000});
 sr.reveal(`.hero_smoke_img1, .hero_smoke_img2, .hero_smoke_img3, .hero_smoke_img4`, {origin: "bottom", delay: 1500});
+
+sr.reveal(`.about_leaf`, {origin: "right", delay: 1000});
+sr.reveal(`.about-content1, about_item2`, {origin: "right"});
+sr.reveal(`.about-content2, about_item1`, {origin: "left"});
 
 sr.reveal(`.feature_left, .promo_content`, {origin: "left"});
 sr.reveal(`.feature_right`, {origin: "right"});
