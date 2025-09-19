@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.nav-link{
+    @apply text-xl font-bold duration-300;
+}
+
+.nav-link:hover{
+    @apply text-amber-800;
+}
