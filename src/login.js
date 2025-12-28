@@ -34,7 +34,7 @@ let loginUser = (e) => {
             
             alert("Login Sucessfully!!");
             sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
-            window.location.href = "/src/app/index.html";
+            window.location.href = "index.html";
         }
       })
       .catch((error) => {

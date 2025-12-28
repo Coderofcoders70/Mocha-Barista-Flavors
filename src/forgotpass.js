@@ -24,7 +24,7 @@ resetPassForm.addEventListener("submit", async (e) => {
   try{
     await sendPasswordResetEmail(auth, email);
     alert("Password reset email sent!");
-    window.location.href = "/src/auth/login.html";
+    window.location.href = "login.html";
   }
   catch(error){
     alert(error.message);

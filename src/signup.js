@@ -33,7 +33,7 @@ let registerUser = (e) => {
             });
 
             alert("SignUp Successfully!!");
-            window.location.href = "/src/auth/login.html";
+            window.location.href = "login.html";
       })
       .catch((error) => {
             alert(error.message);
